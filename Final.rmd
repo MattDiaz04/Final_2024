@@ -160,6 +160,20 @@ barchartGC(~infected + treatment,data=dataD, type="percent")
 
 This chart shows is that there is a significant difference between the drug use and between those who are "OK". 
 
+## Numerical
+
+```{r}
+table1 <- xtabs(~infected + treatment,data=dataD)
+rowPerc(table1)
+```
+
+```{r}
+colPerc(table1)
+```
+
+Among all of the Covid cases that occurred among those who received the vaccine, there was a higher percentage of vaccine recipients who remained uninfected compared to the placebo group. 
+
+
 # Overall Results and Conclusions
 
 
