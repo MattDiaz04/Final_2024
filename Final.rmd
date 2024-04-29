@@ -173,6 +173,17 @@ colPerc(table1)
 
 Among all of the Covid cases that occurred among those who received the vaccine, there was a higher percentage of vaccine recipients who remained uninfected compared to the placebo group. 
 
+## Inferential Results
+
+```{r}
+chisq.test(table1)
+```
+
+```{r}
+chisqtestGC(table1)
+```
+
+Here this chart shows the exact same p-value as the previous chart. In similar fashion, we will reject the null hypothesis seeing as though the p-value is zero. We will therefore conclude that there is a significant association between treatment type and infection status. 
 
 # Overall Results and Conclusions
 
