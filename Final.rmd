@@ -75,7 +75,7 @@ chisqtestGC(table1)
 When looking at this data, these tests show us that the odds of one being infected with the Covid virus is approximately 1.49 times higher with those using the placebo than the vaccine. In addition, this test and chart hows us that the vaccine is more effective in reducing risk for contracting the Covid virus than the placebo.The p-va;ue presented is 3e-03, so we will reject the null hypothesis. 
 
 
-## LGBTQ
+# LGBTQ
 
 ## Introduction
 
@@ -131,9 +131,34 @@ chisqtestGC(table1)
 With the p-value being zero, we reject the null hypothesis and therefore conclude that there is a significant association between the treatment type and infection status. The treatment type, whether that be someone who was administered the vaccine or received the placebo, is related to getting infected with the virus. 
 
 
+#Druggies
 
+## Introduction
 
+$H_o$: There is no difference in the effectiveness of COVID921 vaccine within druggies.
 
+$h_a$:There is a difference in the effectiveness of COVID921 vaccine within druggies.
+
+## Methods
+
+We will be using the Cat~Cat helper file.
+
+## Graphical Descriptive Results
+
+```{r}
+levels(FinalData$DrugUser)
+```
+
+```{r}
+dataD = filter(FinalData,DrugUser=="yes")
+barchartGC(~infected + treatment,data=dataD)
+```
+
+```{r}
+barchartGC(~infected + treatment,data=dataD, type="percent")
+```
+
+This chart shows is that there is a significant difference between the drug use and between those who are "OK". 
 
 # Overall Results and Conclusions
 
