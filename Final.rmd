@@ -60,4 +60,18 @@ colPerc(table1)
 
 With the data presented, it seems as though the vaccine has a lower infection rate compared to the placebo. In addition, among those infected, the vaccine has a slightly better treatment outcome with there being a .67 difference between the placebo and vaccine. 
 
+
+## Inferential Results
+
+```{r}
+chisq.test(table1)
+```
+
+
+```{r}
+chisqtestGC(table1)
+```
+
+When looking at this data, these tests show us that the odds of one being infected with the Covid virus is approximately 1.49 times higher with those using the placebo than the vaccine. In addition, this test and chart hows us that the vaccine is more effective in reducing risk for contracting the Covid virus than the placebo.The p-va;ue presented is 3e-03, so we will reject the null hypothesis. 
+
 # Overall Results and Conclusions
