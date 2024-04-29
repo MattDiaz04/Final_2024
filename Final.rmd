@@ -117,6 +117,24 @@ colPerc(table1)
 
 The infection rate among those who had received the placebo is 15.38%. The infection rate among those who had received the vaccine is 0.66%. This data tell us that the vaccine is more effective in reducing the risk of Covid.
 
+
+## Inferential Results
+
+```{r}
+chisq.test(table1)
+```
+
+```{r}
+chisqtestGC(table1)
+```
+
+With the p-value being zero, we reject the null hypothesis and therefore conclude that there is a significant association between the treatment type and infection status. The treatment type, whether that be someone who was administered the vaccine or received the placebo, is related to getting infected with the virus. 
+
+
+
+
+
+
 # Overall Results and Conclusions
 
 
