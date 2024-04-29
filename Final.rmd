@@ -47,5 +47,17 @@ barchartGC(~infected + treatment, data=dataF, type= "percent")
 
 Based on the barcharts presented, there is significant percentage difference in the vaccine and the placebo.
 
+## Numerical Results
+
+```{r}
+table1 <- xtabs(~infected + treatment, data=dataF)
+rowPerc(table1)
+```
+
+```{r}
+colPerc(table1)
+```
+
+With the data presented, it seems as though the vaccine has a lower infection rate compared to the placebo. In addition, among those infected, the vaccine has a slightly better treatment outcome with there being a .67 difference between the placebo and vaccine. 
 
 # Overall Results and Conclusions
