@@ -30,7 +30,7 @@ $h_a$: There is a difference in the effectiveness of the civid 921 vaccine in fe
 
 ## Methods
 
-The variables in this study: Males-categorical, Females-categorical, LGBT-categorical, Druggies, categorical. We will be using the Cat~Cat helper file. 
+The variables in this study: Males-categorical, Females-categorical, LGBTQ-categorical, Druggies, categorical. We will be using the Cat~Cat helper file. 
 
 ## Graphical Descriptive Results
 
@@ -103,6 +103,19 @@ barchartGC(~infected + treatment,data=dataG, type = "percent")
 ```
 
 This chart shows that there is a significant difference between the placebo and the vaccine. Among those that were infected with covid, those who had the vaccine were infected more than those who had received the placebo. 
+
+## Numerical Results 
+
+```{r}
+table1 <-xtabs(~infected + treatment, data=dataG)
+rowPerc(table1)
+```
+
+```{r}
+colPerc(table1)
+```
+
+The infection rate among those who had received the placebo is 15.38%. The infection rate among those who had received the vaccine is 0.66%. This data tell us that the vaccine is more effective in reducing the risk of Covid.
 
 # Overall Results and Conclusions
 
