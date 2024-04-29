@@ -74,4 +74,42 @@ chisqtestGC(table1)
 
 When looking at this data, these tests show us that the odds of one being infected with the Covid virus is approximately 1.49 times higher with those using the placebo than the vaccine. In addition, this test and chart hows us that the vaccine is more effective in reducing risk for contracting the Covid virus than the placebo.The p-va;ue presented is 3e-03, so we will reject the null hypothesis. 
 
+
+## LGBTQ
+
+## Introduction
+
+$H_o$: There is no difference in effectiveness of the Covid vaccine between LGBTQ people.
+
+$h_a$: There is a difference in effectiveness of the Covid vaccine between LGBTQ people.
+
+## Methods
+
+We will be using the Cat~Cat helper file. 
+
+## Graphical Descriptive Results
+
+```{r}
+levels(FinalData$LGBTQ)
+```
+
+```{r}
+dataG = filter(FinalData,LGBTQ=="gay")
+barchartGC(~infected + treatment,data=dataG)
+```
+
+```{r}
+barchartGC(~infected + treatment,data=dataG, type = "percent")
+```
+
+This chart shows that there is a significant difference between the placebo and the vaccine. Among those that were infected with covid, those who had the vaccine were infected more than those who had received the placebo. 
+
 # Overall Results and Conclusions
+
+
+
+
+
+
+
+
