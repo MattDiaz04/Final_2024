@@ -187,7 +187,9 @@ Here this chart shows the exact same p-value as the previous chart. In similar f
 
 # Overall Results and Conclusions
 
+It can be concluded that there is a significant association between the type of treatment, placebo or vaccine, and infection status, infected or not infected. Based on the charts and graphs above, it is logical to say that the type of treatment, placebo or vaccine, has a substantial impact on whether or not you are more prone to contracting the Covid virus. 
 
+In all, we reject the null hypothesis and conclude that there is a significant association between treatment type and infection status between the studies groups. 
 
 
 
