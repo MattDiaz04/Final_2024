@@ -24,9 +24,9 @@ mutate(across(where(is.character), as.factor))
 
 A new  preventative vaccine (covid921) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
-$H_o$: There is no difference in the effectiveness of the covid 921 vaccine in females.
+$H_o$: There is no difference in the effectiveness of the covid 921 vaccine in different subgroups.
 
-$h_a$: There is a difference in the effectiveness of the civid 921 vaccine in females.
+$h_a$: There is a difference in the effectiveness of the civid 921 vaccine in different subgroups.
 
 ## Methods
 
@@ -45,7 +45,10 @@ barchartGC(~infected + treatment,data=dataF)
 barchartGC(~infected + treatment, data=dataF, type= "percent")
 ```
 
-Based on the barcharts presented, there is significant percentage difference in the vaccine and the placebo.
+This graph shows us that of all the females that have contracted COVID, the females who received the vaccine had less symptoms than those who were administered the placebo, while the all the female group that did not contract COVID showed no difference between those who were vaccinated and not vaccinated. 
+
+
+### Numerical Descriptive
 
 ## Numerical Results
 
@@ -58,7 +61,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-With the data presented, it seems as though the vaccine has a lower infection rate compared to the placebo. In addition, among those infected, the vaccine has a slightly better treatment outcome with there being a .67 difference between the placebo and vaccine. 
+With the data presented, it seems as though the vaccine has a lower infection rate compared to the placebo. In addition, among those infected, the vaccine has a slightly better treatment outcome with there being a .67 difference between the placebo and vaccine. The data from this table shows that from the female group that were infected with COVID 19, those who were unvaccinated, 60% of them experienced symptoms while only 40% of the female group who were vaccinated experienced symptoms. In addition, this also shows that within the female placebo group, 2.04% were infected with COVID, while only 1.37% of the vaccinated group contracted COVID.
 
 
 ## Inferential Results
@@ -69,10 +72,14 @@ chisq.test(table1)
 
 
 ```{r}
+chisq.test(table1)
 chisqtestGC(table1)
+fisher.test(table1)
 ```
 
-When looking at this data, these tests show us that the odds of one being infected with the Covid virus is approximately 1.49 times higher with those using the placebo than the vaccine. In addition, this test and chart hows us that the vaccine is more effective in reducing risk for contracting the Covid virus than the placebo.The p-va;ue presented is 3e-03, so we will reject the null hypothesis. 
+The p-value is 0.0002732 for the Chi-squared test, that there is a significant association between infected and treatment within the Female subroup.
+
+Based on the Fisher exact test, we got a p-value of 0.0002162, which suggest the same as the Chi-squared test.
 
 
 # LGBTQ
@@ -102,7 +109,8 @@ barchartGC(~infected + treatment,data=dataG)
 barchartGC(~infected + treatment,data=dataG, type = "percent")
 ```
 
-This chart shows that there is a significant difference between the placebo and the vaccine. Among those that were infected with covid, those who had the vaccine were infected more than those who had received the placebo. 
+This chart shows that there is a significant difference between the placebo and the vaccine. Among those that were infected with covid, those who had the vaccine were infected more than those who had received the placebo. This graph is showing that within the LGBTQ subgroup, those who contracted the COVID virus and received the vaccination experienced significantly more symptoms than those who did not receive the vaccine. Those who did not get COVID and were both vaccinated and unvaccinated did not show any difference.
+
 
 ## Numerical Results 
 
@@ -115,7 +123,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-The infection rate among those who had received the placebo is 15.38%. The infection rate among those who had received the vaccine is 0.66%. This data tell us that the vaccine is more effective in reducing the risk of Covid.
+This table is showing us that within the LGBTQ placebo group, those individuals experienced 15.38% of symptoms while the vaccinated group experienced 84.62% of symptoms. This graph also shows us that 0.66% of the LGBTQ group who had the placebo contracted COVID, while 3.54% of the vaccinated group contracted COVID.
 
 
 ## Inferential Results
@@ -125,10 +133,12 @@ chisq.test(table1)
 ```
 
 ```{r}
+chisq.test(table1)
 chisqtestGC(table1)
+fisher.test(table1)
 ```
 
-With the p-value being zero, we reject the null hypothesis and therefore conclude that there is a significant association between the treatment type and infection status. The treatment type, whether that be someone who was administered the vaccine or received the placebo, is related to getting infected with the virus. 
+With the p-value being zero, we reject the null hypothesis and therefore conclude that there is a significant association between the treatment type and infection status. The treatment type, whether that be someone who was administered the vaccine or received the placebo, is related to getting infected with the virus. The chisq test shows that the p-value for the LGBTQ group is 0.0000006668 showing that there is an effect between the COVID vaccine and the LGBTQ subgroup, concluding that we are rejecting the null hypothesis.  
 
 
 #Druggies
@@ -158,7 +168,7 @@ barchartGC(~infected + treatment,data=dataD)
 barchartGC(~infected + treatment,data=dataD, type="percent")
 ```
 
-This chart shows is that there is a significant difference between the drug use and between those who are "OK". 
+This graph us showing that from the drug users group who contracted COVID, the ones who received the vaccine had more symptoms than those with the placebo while drug user group that did not contract COVID showed no difference between those who were vaccinated and not vaccinated.
 
 ## Numerical
 
@@ -171,7 +181,8 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-Among all of the Covid cases that occurred among those who received the vaccine, there was a higher percentage of vaccine recipients who remained uninfected compared to the placebo group. 
+The data from this table shows that from the druggies group that were infected with COVID 19, The unvaccinated 11.67% of people experienced symptoms while the vaccinated 88.33% of the druggies group experienced symptoms. It is also showing that within the druggies placebo group, 0.4% were infected with COVID symptoms , while 3.06% of the vaccinated group contracted COVID symptoms.
+
 
 ## Inferential Results
 
@@ -183,16 +194,13 @@ chisq.test(table1)
 chisqtestGC(table1)
 ```
 
-Here this chart shows the exact same p-value as the previous chart. In similar fashion, we will reject the null hypothesis seeing as though the p-value is zero. We will therefore conclude that there is a significant association between treatment type and infection status. 
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
+
+Here this chart shows the exact same p-value as the previous chart. In similar fashion, we will reject the null hypothesis seeing as though the p-value is zero. We will therefore conclude that there is a significant association between treatment type and infection status. Based on the Fisher exact test, we got a p-value of 0.000000000232, which suggest the same as the Chi-squared test.
 
 # Overall Results and Conclusions
-
-It can be concluded that there is a significant association between the type of treatment, placebo or vaccine, and infection status, infected or not infected. Based on the charts and graphs above, it is logical to say that the type of treatment, placebo or vaccine, has a substantial impact on whether or not you are more prone to contracting the Covid virus. 
-
-In all, we reject the null hypothesis and conclude that there is a significant association between treatment type and infection status between the studies groups. 
-
-
-
-
-
-
+In conclusion, the effectiveness of the COVID vaccine varies significantly across different population subgroups. The vaccine showed a significant reduction in the percentage of females contracting COVID-19 compared to those who received the placebo. Both the Chi-squared test and Fisher exact test confirmed this result (p < 0.001). Within the LGBTQ subgroup, individuals who received the vaccine showed a higher percentage of COVID-19 symptoms compared to those who received the placebo. Both statistical tests confirmed this unexpected result (p < 0.001). Similar to the LGBTQ subgroup, druggies who got the vaccine showed a higher likelihood of COVID-19 infection (p < 0.001).Therefore, based on the statistical tests conducted for each subgroup, we reject the null hypothesis that the COVID vaccine has no difference in effectiveness on people in different subgroups.
